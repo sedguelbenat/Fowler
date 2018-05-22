@@ -1,4 +1,7 @@
 package mainProgramm;
+
+import java.util.Enumeration;
+
 public class Rental {
     private Movie movie;
     private int daysRented;
@@ -32,4 +35,13 @@ public class Rental {
         }
         return thisAmount;
     }
+    
+    public int getfrequentRenterPoints(){
+    	int frequentRenterPoints = 0;
+    	frequentRenterPoints++;
+    	if ((this.getMovie().getPriceCode() == Movie.NEW_RELEASE) && this.getDaysRented() > 1) 
+                frequentRenterPoints++;
+            return frequentRenterPoints;
+    }
+    
 }
