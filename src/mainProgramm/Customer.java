@@ -16,13 +16,11 @@ public class Customer {
         return name;
     };
     public String statement() {
-        double totalAmount = 0;
         Enumeration enum_rentals = rentals.elements();	    
         String result = "Rental Record for " + this.getName() + "\n";
         result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n";
 
         while (enum_rentals.hasMoreElements()) {
-            double thisAmount = 0;
             Rental rentalItem = (Rental) enum_rentals.nextElement();
             result += "\t" + rentalItem.getMovie().getTitle()+ "\t" + "\t" + rentalItem.getDaysRented() + "\t" + String.valueOf(rentalItem.amountFor()) + "\n";
         }
